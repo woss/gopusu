@@ -24,18 +24,9 @@ func main() {
 		log.Fatalf("Failed to authorize\n")
 	}
 
-	/*
-    pc.Subscribe("channel.1", readMessage)
-
-	if err != nil {
-    	log.Println(err)
-		log.Fatalf("Failed to subscribe\n")
-	}
-	*/
-
 	log.Println("Sending message")
 
-	messages := 10000
+	messages := 10000000
 
 	start := time.Now()
 	for i := 0; i < messages; i++ {
@@ -50,10 +41,4 @@ func main() {
 	log.Printf("%d usec/message", int64(duration / time.Microsecond))
 	log.Printf("%d messages/sec", rate)
 
-	log.Println("Waiting to receive")
-	time.Sleep(time.Second * 5)
-}
-
-func readMessage(message *gopusu.Publish) {
-	log.Printf("%s: %s\n", message.Channel, message.Content)
 }
