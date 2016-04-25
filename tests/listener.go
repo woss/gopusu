@@ -11,7 +11,7 @@ var received = 0
 
 func main() {
 	log.Printf("Connecting to 127.0.0.1:55000")
-    pc, _ := gopusu.NewPuSuClient("127.0.0.1", 55000)
+    pc, _ := gopusu.NewClient("127.0.0.1", 55000)
     defer pc.Close()
 	log.Printf("Authorizing with 'foo'")
     pc.Authorize("foo")

@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-    pc, err := gopusu.NewPuSuClient("127.0.0.1", 55000)
+    pc, err := gopusu.NewClient("127.0.0.1", 55000)
 
 	if err != nil {
     	log.Println(err)
@@ -24,14 +24,18 @@ func main() {
 		log.Fatalf("Failed to authorize\n")
 	}
 
-	log.Println("Sending message")
+	log.Println("Sending messages")
 
-	messages := 10000000
+	messages := 100000
 
 	start := time.Now()
 	for i := 0; i < messages; i++ {
+		if i % 500 == 0 {
+			fmt.Print(".")
+		}
 		pc.Publish("channel.1", fmt.Sprintf("message %d", i))
 	}
+	fmt.Print("\n")
 	since := time.Since(start)
 	msec := since / time.Millisecond
 	duration := since / time.Duration(messages)
