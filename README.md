@@ -13,7 +13,30 @@ go get github.com/lietu/gopusu
 
 ## Usage
 
-Examples under `tests/`, but this is the really short version:
+Examples are under `tests/`. Running the tests will require screen or 
+multiple terminal windows.
+
+One terminal window, running a `listener`;
+
+```
+cd tests
+go run listener.go
+```
+
+Running basic test:
+```
+cd tests
+go run basic.go
+```
+
+Running `throughput`:
+
+```
+cd tests
+go run throughput.go
+```
+
+Short example how to connect to PuSu server:
 
 ```go
 package main
