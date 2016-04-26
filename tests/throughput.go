@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 	"time"
-	"github.com/lietu/gopusu"
+	"github.com/PuSuEngine/gopusu"
 )
 
 func main() {

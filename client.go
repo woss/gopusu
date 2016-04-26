@@ -14,7 +14,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/gorilla/websocket"
-	"github.com/lietu/pusud/messages"
+	"github.com/PuSuEngine/pusud/messages"
 	"net/url"
 	"time"
 )

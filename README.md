@@ -2,12 +2,12 @@
 
 This is a client for the PuSu Engine written in Go. PuSu Engine is a Pub-Sub engine.
 
-More information on the server repository at [https://github.com/lietu/pusud](https://github.com/lietu/pusud).
+More information on the server repository at [https://github.com/PuSuEngine/pusud](https://github.com/PuSuEngine/pusud).
 
 Get it by running
 
 ```bash
-go get github.com/lietu/gopusu
+go get github.com/PuSuEngine/gopusu
 ```
 
 
@@ -41,7 +41,7 @@ Short example how to connect to PuSu server:
 ```go
 package main
 
-import "github.com/lietu/gopusu"
+import "github.com/PuSuEngine/gopusu"
 
 func main() {
     pc, _ := gopusu.NewPuSuClient("127.0.0.1", 55000)

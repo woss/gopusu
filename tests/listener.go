@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/lietu/gopusu"
+	"github.com/PuSuEngine/gopusu"
 	"fmt"
 	"log"
 	"time"
