@@ -1,12 +1,32 @@
-// The Golang client for PuSu Engine. PuSu Engine is a
-// (relatively) fast and scalable Pub-Sub message delivery
-// system.
+// The Golang client for PuSu Engine. PuSu Engine is a (relatively) fast and
+// scalable Pub-Sub message delivery system.
 //
-// The Golang client is a simple synchronous client that
-// does little magic internally. For operations that the
-// server acknowledges (Connect, Authorize, Subscribe) it
-// waits for the appropriate event coming back from the
-// server before continuing, to ensure nothing odd happens.
+// The Golang client is a simple (mostly) synchronous client that does little
+// magic internally. For operations that the server acknowledges (Connect,
+// Authorize, Subscribe) it waits for the appropriate event coming back from
+// the server before continuing, to ensure you don't do stupid things and get
+// unexpected results.
+//
+// Example usage
+//
+//  package main
+//
+//  import (
+//      "fmt"
+//      "github.com/PuSuEngine/gopusu"
+//  )
+//
+//  func main() {
+//      pc, _ := gopusu.NewPuSuClient("127.0.0.1", 55000)
+//      defer pc.Close()
+//      pc.Authorize("foo")
+//      pc.Subscribe("channel.1", listener)
+//      pc.Publish("channel.2", "message")
+//  }
+//
+//  func listener(msg *gopusu.Publish) {
+//      fmt.Printf("Got message %s on channel %s\n", msg.Content, msg.Channel)
+//  }
 package gopusu
 
 import (
